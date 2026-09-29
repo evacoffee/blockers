@@ -1,6 +1,9 @@
 # blockers
 a small godot game of a tiny sprite navigating a world of darkness with only a flashlight
 
+<img width="1145" height="679" alt="blocker" src="https://github.com/user-attachments/assets/b46dab9c-e207-470d-8614-7945aa7c4eb3" />
+
+
 play here!! 
 
 
