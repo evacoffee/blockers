@@ -1,7 +1,9 @@
 # blockers
 a small godot game of a tiny sprite navigating a world of darkness with only a flashlight
 
-<img width="824" height="464" alt="Screenshot 2026-10-03 at 13-11-27 evacoffee_blockers a small godot game of a tiny sprite navigating a world of darkness with only a flashlight" src="https://github.com/user-attachments/assets/ca38b9d8-1db2-4e81-a396-258213d0d97b" />
+
+https://github.com/user-attachments/assets/671fda1f-a361-4ddd-b678-d328e198a7bb
+
 
 
 play here!! 
