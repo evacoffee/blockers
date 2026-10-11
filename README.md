@@ -1,13 +1,9 @@
 # blockers
 a small godot game of a tiny sprite navigating a world of darkness with only a flashlight
 
-
-https://github.com/user-attachments/assets/671fda1f-a361-4ddd-b678-d328e198a7bb
-
-
-
 play here!! 
 
+https://github.com/user-attachments/assets/671fda1f-a361-4ddd-b678-d328e198a7bb
 
 
 game made with godot and gdscript with 
