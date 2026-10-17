@@ -1,5 +1,5 @@
 # blockers
-a small godot game of a tiny sprite navigating a world of darkness with only a flashlight
+a small godot game of a tiny sprite navigating a world of darkness with only a flashlight and a spear
 
 play here!! 
 
