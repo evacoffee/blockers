@@ -3,7 +3,8 @@ a small godot game of a tiny sprite navigating a world of darkness with only a f
 
 play here!! 
 
-https://github.com/user-attachments/assets/671fda1f-a361-4ddd-b678-d328e198a7bb
+
+https://github.com/user-attachments/assets/8e14672e-84dc-4afb-95d9-d01082439912
 
 
 game made with godot and gdscript with 
