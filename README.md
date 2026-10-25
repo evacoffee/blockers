@@ -1,7 +1,7 @@
 # blockers
 a small godot game of a tiny sprite navigating a world of darkness with only a flashlight and a spear
 
-play here!! 
+play here!!: https://evmaagca.itch.io/blockers
 
 
 https://github.com/user-attachments/assets/8e14672e-84dc-4afb-95d9-d01082439912
