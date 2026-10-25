@@ -1,0 +1,366 @@
+[gd_scene format=3 uid="uid://b8and4ijfq1r5"]
+
+[ext_resource type="Script" uid="uid://dh482egasxi6m" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="Texture2D" uid="uid://c4jdfjpgs8joe" path="res://assets/images/ui/heart_full.png" id="2_oo0fn"]
+[ext_resource type="FontFile" uid="uid://dn6xeqci2ytm3" path="res://assets/images/font/Abaddon Bold.ttf" id="3_5ysmq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ysmq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rap8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fi6k"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1iy0d"]
+bg_color = Color(0, 0.02745098, 0.1764706, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uo2fv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pdws"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_047uy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="hud" type="CanvasLayer" unique_id=922784448]
+script = ExtResource("1_ahhtf")
+
+[node name="hearts" type="HBoxContainer" parent="." unique_id=621522178]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart1" type="TextureRect" parent="hearts" unique_id=721997520]
+layout_mode = 2
+texture = ExtResource("2_oo0fn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="heart2" type="TextureRect" parent="hearts" unique_id=91203093]
+layout_mode = 2
+texture = ExtResource("2_oo0fn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="heart3" type="TextureRect" parent="hearts" unique_id=1594750323]
+layout_mode = 2
+texture = ExtResource("2_oo0fn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="heart4" type="TextureRect" parent="hearts" unique_id=1967831195]
+layout_mode = 2
+texture = ExtResource("2_oo0fn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="heart5" type="TextureRect" parent="hearts" unique_id=1808919728]
+layout_mode = 2
+texture = ExtResource("2_oo0fn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="pausemenu" type="Panel" parent="." unique_id=334731768]
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.5
+offset_top = -194.5
+offset_right = 183.5
+offset_bottom = 194.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+tooltip_auto_translate_mode = 1
+
+[node name="pauselabel" type="Label" parent="pausemenu" unique_id=1299281059]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 38.5
+offset_top = 85.5
+offset_right = 326.5
+offset_bottom = 198.5
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 100
+text = "paused"
+
+[node name="resumebutton" type="Button" parent="pausemenu" unique_id=1131171006]
+process_mode = 3
+layout_mode = 0
+offset_left = 218.5
+offset_top = 293.5
+offset_right = 312.5
+offset_bottom = 336.5
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 30
+text = "resume"
+
+[node name="quitbutton" type="Button" parent="pausemenu" unique_id=1839443134]
+process_mode = 3
+layout_mode = 0
+offset_left = 56.5
+offset_top = 295.5
+offset_right = 113.5
+offset_bottom = 338.5
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 30
+text = "quit"
+
+[node name="fadeoverlay" type="ColorRect" parent="." unique_id=1874760279]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="flashlightbar" type="ProgressBar" parent="." unique_id=868944407]
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.057000004
+anchor_right = 0.007
+anchor_bottom = 0.057000004
+offset_left = 0.03999996
+offset_top = -0.040000916
+offset_right = 200.04
+offset_bottom = 26.96
+theme_override_colors/font_color = Color(0.9848209, 0.96099395, 0.73327893, 1)
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 20
+value = 100.0
+
+[node name="switchcounter" type="Label" parent="." unique_id=1127727768]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -138.0
+offset_bottom = 35.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 30
+text = "POWER: 0/0"
+
+[node name="powermessage" type="Label" parent="." unique_id=843212852]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -459.5
+offset_top = -56.5
+offset_right = 459.5
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 100
+text = "ALL POWER RESTORED"
+
+[node name="leveltitle" type="Label" parent="." unique_id=1215691510]
+visible = false
+offset_left = 508.0
+offset_top = 41.0
+offset_right = 827.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 100
+text = "LEVEL 1"
+
+[node name="levelbutton" type="Button" parent="." unique_id=1901319459]
+anchors_preset = -1
+anchor_left = 0.98
+anchor_top = 0.046000004
+anchor_right = 0.98
+anchor_bottom = 0.046000004
+offset_left = -74.400024
+offset_top = -0.12000275
+offset_right = -0.4000244
+offset_bottom = 42.879997
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_5ysmq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6rap8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6fi6k")
+text = "levels"
+
+[node name="achievementpopup" type="Panel" parent="." unique_id=139410700]
+visible = false
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 471.0
+offset_top = 37.0
+offset_right = -465.0
+offset_bottom = -545.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1iy0d")
+
+[node name="achievementtitle" type="Label" parent="achievementpopup" unique_id=317017048]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 14.0
+offset_right = 274.0
+offset_bottom = 37.0
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 22
+text = "ACHIEVEMENT UNLOCKED!"
+
+[node name="achievementdescription" type="Label" parent="achievementpopup" unique_id=1946428545]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 87.0
+offset_right = 297.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 20
+text = "Your achievement description"
+
+[node name="achievementsbutton" type="Button" parent="." unique_id=1268928314]
+offset_left = 1125.0
+offset_top = 86.0
+offset_right = 1271.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_uo2fv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5pdws")
+theme_override_styles/hover = SubResource("StyleBoxFlat_047uy")
+text = "achievements"
+
+[node name="achievementspanel" type="Panel" parent="." unique_id=2067195174]
+process_mode = 3
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.5
+offset_top = -187.0
+offset_right = 185.5
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menutitle" type="Label" parent="achievementspanel" unique_id=526993856]
+layout_mode = 0
+offset_left = 97.5
+offset_top = 13.0
+offset_right = 275.5
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 30
+text = "ACHIEVEMENTS"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="achievementspanel" unique_id=1495766762]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023000002
+anchor_top = 0.134
+anchor_right = 0.023000002
+anchor_bottom = 0.134
+offset_left = -0.033000946
+offset_top = -0.11600113
+offset_right = 356.967
+offset_bottom = 261.884
+
+[node name="achievementlist" type="VBoxContainer" parent="achievementspanel/ScrollContainer" unique_id=1592944398]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="closeachievements" type="Button" parent="achievementspanel" unique_id=1605848028]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 328.0
+offset_right = 214.0
+offset_bottom = 359.0
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 20
+text = "close"
+
+[connection signal="pressed" from="levelbutton" to="." method="_on_levelbutton_pressed"]

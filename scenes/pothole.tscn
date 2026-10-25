@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://maw87fe5mco2"]
+
+[ext_resource type="FontFile" uid="uid://dn6xeqci2ytm3" path="res://assets/images/font/Abaddon Bold.ttf" id="1_hp5aq"]
+[ext_resource type="Script" uid="uid://bq63yof7bx3hn" path="res://scripts/pothole.gd" id="1_nnjju"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ta23p"]
+radius = 181.0
+
+[node name="pothole" type="Area2D" unique_id=1344400035]
+script = ExtResource("1_nnjju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=860027135]
+shape = SubResource("CircleShape2D_ta23p")
+
+[node name="promt" type="Label" parent="." unique_id=1799600721]
+anchors_preset = -1
+offset_left = -105.0
+offset_top = -69.0
+offset_right = 115.0
+offset_bottom = -34.0
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("1_hp5aq")
+theme_override_font_sizes/font_size = 30
+text = "Q - underground"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

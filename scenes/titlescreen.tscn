@@ -1,0 +1,591 @@
+[gd_scene format=3 uid="uid://dp4q77wqdtv4x"]
+
+[ext_resource type="Script" uid="uid://cxqjojigjjhoo" path="res://scripts/titlescreen.gd" id="1_3jj3l"]
+[ext_resource type="FontFile" uid="uid://5u3wjrl6s16h" path="res://assets/images/font/PixelifySans-SemiBold.ttf" id="1_6d6rd"]
+[ext_resource type="Texture2D" uid="uid://bd3kf7a0mk8eh" path="res://assets/images/extra/1.png" id="2_v6ms7"]
+[ext_resource type="Texture2D" uid="uid://tg3a8nn7hwdv" path="res://assets/images/extra/2.png" id="3_rpvs4"]
+[ext_resource type="Texture2D" uid="uid://dd4hd8wkf1jd7" path="res://assets/images/extra/3.png" id="4_84han"]
+[ext_resource type="Script" uid="uid://cln0t0ns30cym" path="res://scripts/title_flicker.gd" id="6_84han"]
+[ext_resource type="AudioStream" uid="uid://cwkvm1gsejqw6" path="res://assets/audio/buttonsound.wav" id="6_rpvs4"]
+[ext_resource type="AudioStream" uid="uid://cighmftux6ynl" path="res://assets/audio/titlescreen_music.wav" id="8_84han"]
+[ext_resource type="FontFile" uid="uid://dn6xeqci2ytm3" path="res://assets/images/font/Abaddon Bold.ttf" id="8_w77yj"]
+[ext_resource type="AudioStream" uid="uid://dumoctpp60kl5" path="res://assets/audio/flashlightclick.wav" id="9_6ejck"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84han"]
+atlas = ExtResource("2_v6ms7")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ejck"]
+atlas = ExtResource("3_rpvs4")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w77yj"]
+atlas = ExtResource("4_84han")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f3qjg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84han")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ejck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w77yj")
+}],
+"loop": 1,
+"name": &"moving",
+"speed": 2.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6ms7"]
+bg_color = Color(0, 0, 0, 0.59607846)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6784314, 0.84705883, 0.9019608, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84han"]
+bg_color = Color(0, 0, 0, 0.59607846)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpvs4"]
+bg_color = Color(0, 0, 0, 0.59607846)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ejck"]
+bg_color = Color(0, 0, 0, 0.59607846)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6784314, 0.84705883, 0.9019608, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7hj3"]
+bg_color = Color(0, 0, 0, 0.59607846)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w77yj"]
+bg_color = Color(0, 0, 0, 0.59607846)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am5ev"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0rct"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsij0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.02745098, 0.1764706, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_km2b3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smc4a"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7yat"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.02745098, 0.1764706, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8or72"]
+bg_color = Color(0, 0, 0, 0.59607846)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6784314, 0.84705883, 0.9019608, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcbn3"]
+bg_color = Color(0, 0, 0, 0.59607846)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybki2"]
+bg_color = Color(0, 0, 0, 0.59607846)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.91764706, 0.8039216, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="titlescreen" type="Control" unique_id=194515398]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3jj3l")
+
+[node name="darkness" type="ColorRect" parent="." unique_id=993195078]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="background" type="TextureRect" parent="." unique_id=1857308279]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="background" unique_id=71103990]
+position = Vector2(640, 360.00003)
+scale = Vector2(0.6666666, 0.6666667)
+sprite_frames = SubResource("SpriteFrames_f3qjg")
+animation = &"moving"
+autoplay = "moving"
+frame_progress = 0.73413503
+
+[node name="title" type="Label" parent="." unique_id=1937657630]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.187
+anchor_right = 0.5
+anchor_bottom = 0.187
+offset_left = -211.0
+offset_top = -49.64
+offset_right = 213.0
+offset_bottom = 50.36
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 100
+text = "blockers"
+script = ExtResource("6_84han")
+
+[node name="eva" type="Label" parent="." unique_id=1157339591]
+layout_mode = 0
+offset_left = 569.0
+offset_top = 192.0
+offset_right = 720.0
+offset_bottom = 215.0
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("1_6d6rd")
+text = "by: eva (evmaagca)"
+
+[node name="buttonsound" type="AudioStreamPlayer2D" parent="." unique_id=1939345332]
+stream = ExtResource("6_rpvs4")
+
+[node name="startbutton" type="Button" parent="." unique_id=57697136]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 463.0
+offset_top = 239.0
+offset_right = 813.0
+offset_bottom = 304.0
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6ms7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_84han")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rpvs4")
+text = "start game"
+
+[node name="extrasbutton" type="Button" parent="." unique_id=1476714809]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 462.0
+offset_top = 327.0
+offset_right = 812.0
+offset_bottom = 392.0
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_v6ms7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_84han")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rpvs4")
+text = "extras"
+
+[node name="settingsbutton" type="Button" parent="." unique_id=1101284368]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 464.0
+offset_top = 424.0
+offset_right = 814.0
+offset_bottom = 489.0
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ejck")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v7hj3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w77yj")
+text = "settings"
+
+[node name="extraspanel" type="Panel" parent="." unique_id=924136702]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 892.0
+offset_top = 164.0
+offset_right = 1210.0
+offset_bottom = 561.0
+
+[node name="title" type="Label" parent="extraspanel" unique_id=1528188354]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 10.0
+offset_right = 233.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 40
+text = "extras"
+
+[node name="levelsbutton" type="Button" parent="extraspanel" unique_id=1307193575]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 231.0
+offset_right = 254.0
+offset_bottom = 269.0
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_am5ev")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0rct")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lsij0")
+text = "level select"
+
+[node name="achievementsbutton" type="Button" parent="extraspanel" unique_id=823449508]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 147.0
+offset_right = 273.0
+offset_bottom = 185.0
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_km2b3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_smc4a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y7yat")
+text = "achievements"
+
+[node name="extrasclosebutton" type="Button" parent="extraspanel" unique_id=1151657087]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 348.0
+offset_right = 209.0
+offset_bottom = 386.0
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 30
+text = "close"
+
+[node name="achievementspanel" type="Panel" parent="." unique_id=1767998289]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.26500002
+anchor_right = 0.048
+anchor_bottom = 0.26500002
+offset_left = -0.44000244
+offset_top = 0.19998169
+offset_right = 366.56
+offset_bottom = 437.19998
+
+[node name="achievements" type="Label" parent="achievementspanel" unique_id=1505231663]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27
+anchor_top = 0.039
+anchor_right = 0.27
+anchor_bottom = 0.039
+offset_left = -0.09000397
+offset_top = -0.043001175
+offset_right = 164.91
+offset_bottom = 34.957
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("8_w77yj")
+theme_override_font_sizes/font_size = 30
+text = "achievements"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="achievementspanel" unique_id=644253266]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 62.0
+offset_right = 352.0
+offset_bottom = 383.0
+
+[node name="achievementlist" type="VBoxContainer" parent="achievementspanel/ScrollContainer" unique_id=1963354697]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="achievementsclosebutton" type="Button" parent="achievementspanel" unique_id=154428769]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45000002
+anchor_top = 0.89900005
+anchor_right = 0.45000002
+anchor_bottom = 0.89900005
+offset_left = -0.15000916
+offset_top = 0.13699341
+offset_right = 47.84999
+offset_bottom = 31.136993
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("8_w77yj")
+theme_override_font_sizes/font_size = 20
+text = "back"
+
+[node name="settingspanel" type="Panel" parent="." unique_id=20715586]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 892.0
+offset_top = 164.0
+offset_right = 1210.0
+offset_bottom = 561.0
+
+[node name="title" type="Label" parent="settingspanel" unique_id=924225484]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 11.0
+offset_right = 247.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 40
+text = "settings"
+
+[node name="volumelabel" type="Label" parent="settingspanel" unique_id=218580838]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 163.0
+offset_right = 208.0
+offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 30
+text = "volume"
+
+[node name="volumeslider" type="HSlider" parent="settingspanel" unique_id=1051743802]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 36.0
+offset_top = 208.0
+offset_right = 286.0
+offset_bottom = 292.0
+value = 100.0
+
+[node name="settingsclose" type="Button" parent="settingspanel" unique_id=585999758]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 348.0
+offset_right = 209.0
+offset_bottom = 386.0
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 30
+text = "close"
+
+[node name="creditsbutton" type="Button" parent="." unique_id=247674219]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 463.0
+offset_top = 517.0
+offset_right = 813.0
+offset_bottom = 582.0
+theme_override_colors/font_color = Color(0.827451, 0.827451, 0.827451, 1)
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_8or72")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hcbn3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ybki2")
+text = "credits/controls"
+
+[node name="credits_controlpanel" type="Panel" parent="." unique_id=1681394614]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 78.0
+offset_top = 156.0
+offset_right = 396.0
+offset_bottom = 553.0
+
+[node name="credits_controlpaneltitle" type="Label" parent="credits_controlpanel" unique_id=1323813504]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 298.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(1, 0.91764706, 0.8039216, 1)
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 32
+text = "credits/controls"
+
+[node name="controllabel" type="Label" parent="credits_controlpanel" unique_id=1515676911]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 134.0
+offset_right = 302.0
+offset_bottom = 364.0
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 15
+text = "controls: wasd to move, 
+space to attack, 
+go through the pothole for 
+the next part with q, 
+refill your light at near 
+by vending mechines with e, go 
+near trashcans for hearts, go 
+near fire hydrants to open exit! (pss 
+look for the yellow stop sign 
+for the exit!)
+levels/achivements 
+will NOT work on mobile!"
+
+[node name="creditslabel" type="Label" parent="credits_controlpanel" unique_id=1762867074]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 55.0
+offset_right = 288.0
+offset_bottom = 121.0
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 18
+text = "blockers by evmaagca
+(made all by me 
+except certain itch assets!)"
+
+[node name="credits_controlclose" type="Button" parent="credits_controlpanel" unique_id=2010531329]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 348.0
+offset_right = 209.0
+offset_bottom = 386.0
+theme_override_fonts/font = ExtResource("1_6d6rd")
+theme_override_font_sizes/font_size = 30
+text = "close"
+
+[node name="titlemusic" type="AudioStreamPlayer" parent="." unique_id=1249149855]
+stream = ExtResource("8_84han")
+autoplay = true
+
+[node name="flashlighttitle" type="AudioStreamPlayer2D" parent="." unique_id=859909445]
+stream = ExtResource("9_6ejck")
+
+[connection signal="pressed" from="startbutton" to="." method="_on_startbutton_pressed"]
+[connection signal="pressed" from="extrasbutton" to="." method="_on_extrasbutton_pressed"]
+[connection signal="pressed" from="settingsbutton" to="." method="_on_settingsbutton_pressed"]
+[connection signal="pressed" from="extraspanel/levelsbutton" to="." method="_on_levelsbutton_pressed"]
+[connection signal="pressed" from="extraspanel/achievementsbutton" to="." method="_on_achievementsbutton_pressed"]
+[connection signal="pressed" from="extraspanel/extrasclosebutton" to="." method="_on_extrasclosebutton_pressed"]
+[connection signal="pressed" from="achievementspanel/achievementsclosebutton" to="." method="_on_achievementsclosebutton_pressed"]
+[connection signal="pressed" from="settingspanel/settingsclose" to="." method="_on_settingsclose_pressed"]
+[connection signal="pressed" from="creditsbutton" to="." method="_on_creditsbutton_pressed"]
+[connection signal="pressed" from="credits_controlpanel/credits_controlclose" to="." method="_on_credits_controlclose_pressed"]

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bcc7mtxvcx2lv"]
+
+[ext_resource type="Script" uid="uid://cc0nagt4quany" path="res://scripts/powerswitch.gd" id="1_ekwvb"]
+[ext_resource type="FontFile" uid="uid://dn6xeqci2ytm3" path="res://assets/images/font/Abaddon Bold.ttf" id="1_s6q4x"]
+[ext_resource type="AudioStream" uid="uid://jaiw1i4g40sn" path="res://assets/audio/powerswitch.wav" id="2_dahmr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1iy0d"]
+radius = 138.03261
+
+[node name="powerswitch" type="Area2D" unique_id=1020149037]
+script = ExtResource("1_ekwvb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1455591558]
+shape = SubResource("CircleShape2D_1iy0d")
+
+[node name="promt" type="Label" parent="." unique_id=1358979861]
+anchors_preset = -1
+offset_left = -91.0
+offset_top = -79.0
+offset_right = 98.0
+offset_bottom = -50.0
+theme_override_fonts/font = ExtResource("1_s6q4x")
+theme_override_font_sizes/font_size = 25
+text = "E - restore power"
+
+[node name="switchsound" type="AudioStreamPlayer2D" parent="." unique_id=1639976592]
+stream = ExtResource("2_dahmr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

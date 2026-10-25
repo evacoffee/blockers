@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dj42esafafpok"]
+
+[ext_resource type="Script" uid="uid://caw57b03m2xc7" path="res://scripts/mobile_joystick.gd" id="1_4em40"]
+[ext_resource type="Texture2D" uid="uid://kth51tiv5pff" path="res://assets/images/mobile/joystick_background.png" id="1_5fa6u"]
+[ext_resource type="Script" uid="uid://82xhyof441cq" path="res://scripts/mobilecontrols.gd" id="1_acybu"]
+[ext_resource type="Texture2D" uid="uid://bt3p71gvrbqwo" path="res://assets/images/mobile/joystick_knob.png" id="3_rbli0"]
+[ext_resource type="Texture2D" uid="uid://b46vvw8hgeixv" path="res://assets/images/mobile/attack_button.png" id="4_rbli0"]
+[ext_resource type="Texture2D" uid="uid://cxrmgfd2ojqx" path="res://assets/images/mobile/e_button.png" id="5_bnar2"]
+[ext_resource type="Texture2D" uid="uid://dedf04nxdgg1r" path="res://assets/images/mobile/q_button.png" id="6_go2tr"]
+
+[node name="mobilecontrols" type="CanvasLayer" unique_id=1921714031]
+script = ExtResource("1_acybu")
+
+[node name="joystick" type="Control" parent="." unique_id=863089506]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 34.0
+offset_top = 529.0
+offset_right = 184.0
+offset_bottom = 679.0
+script = ExtResource("1_4em40")
+
+[node name="background" type="TextureRect" parent="joystick" unique_id=1541815651]
+modulate = Color(1, 1, 1, 0.40784314)
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 150.0
+texture = ExtResource("1_5fa6u")
+
+[node name="knob" type="TextureRect" parent="joystick" unique_id=357628002]
+modulate = Color(1, 1, 1, 0.6509804)
+layout_mode = 0
+offset_left = 45.0
+offset_top = 45.0
+offset_right = 105.0
+offset_bottom = 105.0
+texture = ExtResource("3_rbli0")
+
+[node name="attackbutton" type="TextureButton" parent="." unique_id=1330259616]
+modulate = Color(1, 1, 1, 0.61960787)
+offset_left = 1146.0
+offset_top = 464.0
+offset_right = 1246.0
+offset_bottom = 564.0
+texture_normal = ExtResource("4_rbli0")
+
+[node name="interactbutton" type="TextureButton" parent="." unique_id=464297357]
+modulate = Color(1, 1, 1, 0.61960787)
+offset_left = 1158.0
+offset_top = 366.0
+offset_right = 1238.0
+offset_bottom = 446.0
+texture_normal = ExtResource("5_bnar2")
+
+[node name="potholebutton" type="TextureButton" parent="." unique_id=446003305]
+modulate = Color(1, 1, 1, 0.61960787)
+offset_left = 1158.0
+offset_top = 264.0
+offset_right = 1238.0
+offset_bottom = 344.0
+texture_normal = ExtResource("6_go2tr")

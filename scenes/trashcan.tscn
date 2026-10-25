@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://kg6tu7xh26h"]
+
+[ext_resource type="Script" uid="uid://cq3p0ighnv5em" path="res://scripts/trashcan.gd" id="1_1btkc"]
+[ext_resource type="AudioStream" uid="uid://c20c2cl21pw5g" path="res://assets/audio/trashdrop.wav" id="1_dqkxp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1btkc"]
+radius = 150.0
+
+[node name="trashcan" type="Area2D" unique_id=1255161990]
+script = ExtResource("1_1btkc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=693414399]
+shape = SubResource("CircleShape2D_1btkc")
+
+[node name="spawnpoint" type="Marker2D" parent="." unique_id=1838127029]
+position = Vector2(0, 75)
+
+[node name="dropsound" type="AudioStreamPlayer2D" parent="." unique_id=1885545252]
+stream = ExtResource("1_dqkxp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

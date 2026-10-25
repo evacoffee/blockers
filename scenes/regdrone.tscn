@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://doiic7bq5i0p4"]
+
+[ext_resource type="Script" uid="uid://dgtjvivu6qu06" path="res://scripts/regdrone.gd" id="1_bs2da"]
+[ext_resource type="Shader" uid="uid://cxubwjh4ncops" path="res://scripts/shader/pixel_dissolve.gdshader" id="1_tqkt8"]
+[ext_resource type="Texture2D" uid="uid://cnkgv5pifwcx" path="res://assets/images/enemies/mine_drone_activated.png" id="2_tqkt8"]
+[ext_resource type="Texture2D" uid="uid://n32ry41cue1q" path="res://assets/images/enemies/mine_drone_death.png" id="3_6pbrx"]
+[ext_resource type="Texture2D" uid="uid://dfhpc0fjdaw7j" path="res://assets/images/enemies/mine_drone_idle.png" id="4_tq2hl"]
+[ext_resource type="AudioStream" uid="uid://08lxf3y0gbnm" path="res://assets/audio/hit_enemy.wav" id="5_5ijeb"]
+[ext_resource type="PackedScene" uid="uid://dq0bfg0eg0x7n" path="res://scenes/heathbar.tscn" id="6_cjfkm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_88du6"]
+shader = ExtResource("1_tqkt8")
+shader_parameter/dissolve_amount = 0.0
+shader_parameter/pixel_size = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xs83h"]
+resource_local_to_scene = true
+shader = ExtResource("1_tqkt8")
+shader_parameter/dissolve_amount = 0.0
+shader_parameter/pixel_size = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bs2da"]
+atlas = ExtResource("2_tqkt8")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqkt8"]
+atlas = ExtResource("2_tqkt8")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pbrx"]
+atlas = ExtResource("3_6pbrx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq2hl"]
+atlas = ExtResource("3_6pbrx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ijeb"]
+atlas = ExtResource("4_tq2hl")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjfkm"]
+atlas = ExtResource("4_tq2hl")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w03x7"]
+atlas = ExtResource("4_tq2hl")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1iy0d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bs2da")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqkt8")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pbrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq2hl")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ijeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjfkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w03x7")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tereh"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sd15j"]
+radius = 170.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd15j"]
+size = Vector2(50, 51)
+
+[node name="regdrone" type="CharacterBody2D" unique_id=302745272]
+material = SubResource("ShaderMaterial_88du6")
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_bs2da")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=36744116]
+material = SubResource("ShaderMaterial_xs83h")
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_1iy0d")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2028888600]
+position = Vector2(1, -7)
+shape = SubResource("CircleShape2D_tereh")
+
+[node name="sight" type="Area2D" parent="." unique_id=296053327]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sight" unique_id=226328626]
+shape = SubResource("CircleShape2D_sd15j")
+
+[node name="takedamage" type="AudioStreamPlayer2D" parent="." unique_id=1577155975]
+stream = ExtResource("5_5ijeb")
+volume_db = -10.0
+pitch_scale = 0.75
+
+[node name="heathbar" parent="." unique_id=674137877 instance=ExtResource("6_cjfkm")]
+position = Vector2(-13, 19)
+scale = Vector2(1.5, 1.5)
+
+[node name="hitbox" type="Area2D" parent="." unique_id=1570134987]
+position = Vector2(1, -8)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1624304466]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_sd15j")
+
+[node name="attacktimer" type="Timer" parent="." unique_id=183018776]
+
+[connection signal="body_entered" from="sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="sight" to="." method="_on_sight_body_exited"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="attacktimer" to="." method="_on_attacktimer_timeout"]
