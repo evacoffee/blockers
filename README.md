@@ -7,7 +7,7 @@ play here!!: https://evmaagca.itch.io/blockers
 https://github.com/user-attachments/assets/8e14672e-84dc-4afb-95d9-d01082439912
 
 
-game made with godot and gdscript! I created the game's 15 levels, player systems, enemies, UI, combat mechanics, flashlight system, power switches, and achievement system using Godot's scene and scripting systems. I used separate scripts for systems such as the player, drones, HUD, levels, achievements, and game management. I also used signals to communicate between different parts of the game, such as when the player takes damage, dies, activates a power switch, or unlocks an achievement. I'm super excited for people to play this game and I hope you enjoy it!
+game made with godot and gdscript! I created the game's 15 levels, player systems, enemies, UI, combat mechanics, flashlight system, power switches, and achievement system using Godot's scene and scripting systems. I used separate scripts for systems such as the player, drones, HUD, levels, achievements, and game management. I also used signals to communicate between different parts of the game, such as when the player takes damage, dies, activates a power switch, or unlocks an achievement. I'm super excited for people to play this game and I hope you enjoy it! (pss works also on mobile! feel free to try!)
 
 # features
 - 15 levels that get harder
