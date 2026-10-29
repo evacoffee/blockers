@@ -5,52 +5,30 @@ const LEVEL_FONT = preload("res://assets/images/font/Abaddon Bold.ttf")
 @onready var levellist: HBoxContainer = $ScrollContainer/levellist
 @onready var fade: ColorRect = $fade
 @onready var music: AudioStreamPlayer2D = $music
+@onready var backbutton: Button = $backbutton
 
 
 func _ready() -> void:
 	fade.color.a = 0.0
 	music.play()
 	
-		
 	playerstats.load_level_progress()
 	create_level_buttons()
-
-
+	
 func create_level_buttons() -> void:
 	for child in levellist.get_children():
 		levellist.remove_child(child)
 		child.queue_free()
-		
-	var directory := DirAccess.open("res://scenes/levels")
-	
-	if directory == null:
-		push_error("Could not find res://scenes/levels")
-		return
-		
-	var level_numbers: Array[int] = []
-	
-	directory.list_dir_begin()
-	var file_name := directory.get_next()
-	
-	while file_name != "":
-		if not directory.current_is_dir():
-			if file_name.begins_with("level_") and file_name.ends_with(".tscn"):
-				var number_text := file_name.trim_prefix("level_")
-				number_text = number_text.trim_suffix(".tscn")
-				
-				if number_text.is_valid_int():
-					level_numbers.append(int(number_text))
-					
-		file_name = directory.get_next()
-		
-	directory.list_dir_end()
-	level_numbers.sort()
-	
-	print("LEVELS FOUND: ", level_numbers)
-	
+
+	var level_numbers: Array[int] = [
+		1, 2, 3, 4, 5,
+		6, 7, 8, 9, 10,
+		11, 12, 13, 14, 15
+	]
+
 	for level_number in level_numbers:
 		create_level_button(level_number)
-		
+
 	levellist.hide()
 	await get_tree().process_frame
 	levellist.queue_sort()
@@ -114,4 +92,17 @@ func _on_level_pressed(level_number: int) -> void:
 	
 	await tween.finished
 	
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
+
+func _on_back_pressed() -> void:
+	fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(fade, "color:a", 1.0, 0.6)
+
+	await tween.finished
+
+	playerstats.selected_level = playerstats.return_level
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
